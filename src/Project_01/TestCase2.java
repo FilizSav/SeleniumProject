@@ -8,13 +8,12 @@ import util.Driver;
 import java.util.List;
 
 public class TestCase2 {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args){
 
         WebDriver driver = Driver.getDriver();
 
         driver.get("https://automationexercise.com/");
 
-        Thread.sleep(10);
         List<WebElement> elements = driver.findElements(By.cssSelector("ul[class*='nav navbar-nav'"));
 
         for (WebElement e : elements){
