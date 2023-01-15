@@ -10,14 +10,16 @@ public class Driver {
     private static WebDriver driver;
 
     public static WebDriver getDriver() {
-        System.setProperty("webdriver.chrome.driver", "/Users/filizsav/IdeaProjects/selenium_initial_project_5/chromedriver");
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        return driver;
+       if(driver == null) {
+           System.setProperty("webdriver.chrome.driver", "/Users/filizsav/IdeaProjects/selenium_initial_project_5/chromedriver");
+           driver = new ChromeDriver();
+           driver.manage().window().maximize();
+       } return driver;
     }
 
     public static void quitDriver(){
         driver.quit();
+        driver = null;
     }
 
 }

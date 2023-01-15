@@ -13,8 +13,9 @@ public class TestCase4 {
         WebDriver driver = Driver.getDriver();
 
         driver.get("https://automationexercise.com/");
-        System.out.println(driver.findElement(By.xpath("//p[@class='pull-left']")).getText());
-
+        WebElement footer = driver.findElement(By.xpath("//p[@class='pull-left']"));
+        if(footer.isDisplayed()) System.out.println("Footer validation PASSED \n" + footer.getText());
+        else System.out.println("Footer validation FAILED");
         Driver.quitDriver();
     }
 }
